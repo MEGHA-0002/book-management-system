@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>day11-cw</title>
+</head>
+<body>
+  <script type="text/javascript">
+    class Book {
+      constructor(title, author, price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+      }
+
+      getTitle() {
+        return this.title;
+      }
+
+      getAuthor() {
+        return this.author;
+      }
+
+      getPrice() {
+        return this.price;
+      }
+
+      setPrice(newPrice) {
+        if (typeof newPrice === "number" && newPrice > 0) {
+          this.price = newPrice;
+          console.log(`Price updated to ${newPrice}`);
+        } else {
+          console.log("Invalid price! Must be a number greater than 0.");
+        }
+      }
+
+      printDetails() {
+        console.log(`Book Details:
+    Title: ${this.title}
+    Author: ${this.author}
+    Price: ${this.price}`);
+      }
+    }
+
+    let myBook = new Book("The Alchemist", "Paulo Coelho", 299);
+
+    myBook.setPrice(-50);    
+    myBook.setPrice("free");
+    myBook.setPrice(350);    
+    myBook.printDetails();
+  </script>
+</body>
+</html>
